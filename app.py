@@ -4,6 +4,7 @@ import logging
 
 #---CONFIGURE APP---------------------------------------------------
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'mysecretkey'
 logging.basicConfig(filename='logs/flask.log', level=logging.INFO)
 sys.tracebacklimit = 10
 
@@ -11,7 +12,14 @@ sys.tracebacklimit = 10
 @app.route('/')
 def login():
     app.logger.info("Login")
+    session['permission'] = 'admin'
     return "<b>Login Page</b>"
+
+@app.route('/logout')
+def logout():
+    app.logger.info("Logout")
+    session.clear()
+    return redirect('/login')
 
 @app.route('/register')
 def register():
@@ -20,6 +28,9 @@ def register():
 
 @app.route('/home')
 def home():
+    if 'permission' in session:
+        if session['permission'] == 'admin':
+            return "All glory to the administrator!"
     app.logger.info("Home")
     return "Home"
 
