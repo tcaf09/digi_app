@@ -76,3 +76,30 @@ INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-F
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.244.80:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:app:Login
+INFO:werkzeug:127.0.0.1 - - [22/Jul/2026 12:27:19] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [22/Jul/2026 12:27:19] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Jul/2026 12:27:19] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Jul/2026 12:27:20] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=JXuIK3wHo66P3hfDyCmc HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Jul/2026 12:27:20] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.244.80:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:app:Login
+INFO:werkzeug:127.0.0.1 - - [22/Jul/2026 12:28:13] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [22/Jul/2026 12:28:14] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Jul/2026 12:28:14] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Jul/2026 12:28:14] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=dJKF5cxRWImYLw29MjSw HTTP/1.1" 200 -
