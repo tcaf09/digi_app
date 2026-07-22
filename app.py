@@ -13,7 +13,7 @@ sys.tracebacklimit = 10
 def login():
     app.logger.info("Login")
     session['permission'] = 'admin'
-    return "<b>Login Page</b>"
+    return render_template('login.html')
 
 @app.route('/logout')
 def logout():

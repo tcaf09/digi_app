@@ -72,3 +72,7 @@ INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
