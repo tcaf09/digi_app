@@ -1,12 +1,17 @@
 from flask import *
 import sys
 import logging
+from interfaces.databaseinterface import Database
 
 #---CONFIGURE APP---------------------------------------------------
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 logging.basicConfig(filename='logs/flask.log', level=logging.INFO)
 sys.tracebacklimit = 10
+DATABASE = Database('test.db', log=app.logger)
+
+
+
 
 #---VIEW FUNCTIONS----------------------------------------------------
 @app.route('/', methods=['GET', 'POST'])
@@ -29,8 +34,15 @@ def logout():
     session.clear()
     return redirect('/login')
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
+    if request.method == "POST":
+        email = request.form.get('email')
+        password = request.form.get('password')
+        firstname = request.form.get('firstname')
+        lastname = request.form.get('lastname')
+        confirm_password = request.form.get('confirm_password')
+
     app.logger.info("Register")
     return render_template('register.html')
 
