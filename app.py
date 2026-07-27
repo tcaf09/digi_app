@@ -9,11 +9,19 @@ logging.basicConfig(filename='logs/flask.log', level=logging.INFO)
 sys.tracebacklimit = 10
 
 #---VIEW FUNCTIONS----------------------------------------------------
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def login():
+    message = "Please login to continue."
+    if request.method == 'POST':
+        email = request.form.get('email') #name of the input
+        password = request.form.get('password') #name of input
+        if email == 'admin' and password == 'admin':
+            session['permission'] = 'admin'
+            return redirect('/home')
+        else:
+            message="Invalid credentials. Please try again."
     app.logger.info("Login")
-    session['permission'] = 'admin'
-    return render_template('login.html')
+    return render_template('login.html', message=message)
 
 @app.route('/logout')
 def logout():
@@ -24,7 +32,7 @@ def logout():
 @app.route('/register')
 def register():
     app.logger.info("Register")
-    return "Registration Page"
+    return render_template('register.html')
 
 @app.route('/home')
 def home():
