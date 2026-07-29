@@ -18,17 +18,19 @@ def backdoor():
 #---VIEW FUNCTIONS----------------------------------------------------
 @app.route('/', methods=['GET', 'POST'])
 def login():
-    message = "Please login to continue."
     if request.method == 'POST':
         email = request.form.get('email') #name of the input
         password = request.form.get('password') #name of input
-        if email == 'admin' and password == 'admin':
-            session['permission'] = 'admin'
+        results = DATABASE.ViewQuery('SELECT * FROM users WHERE email = ? and password = ?', (email,password))
+        if results:
+            session['email'] = email
+            session['permission'] = results[0]['permission']
+            flash("Login successful!")
             return redirect('/home')
         else:
-            message="Invalid credentials. Please try again."
+            flash("Invalid credentials. Please try again.")
     app.logger.info("Login")
-    return render_template('login.html', message=message)
+    return render_template('login.html')
 
 @app.route('/logout')
 def logout():
