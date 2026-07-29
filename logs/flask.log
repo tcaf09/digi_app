@@ -258,3 +258,106 @@ INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 532-969-401
 INFO:werkzeug:127.0.0.1 - - [27/Jul/2026 10:32:16] "GET /backdoor HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.244.100:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:app:Login
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:19:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:19:54] "GET /static/css/custom.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:19:54] "GET /static/js/new_ajax_helper.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:19:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Register
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:19:58] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:19:58] "[36mGET /static/css/custom.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:19:58] "[36mGET /static/js/new_ajax_helper.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:20:15] "[32mPOST /register HTTP/1.1[0m" 302 -
+INFO:app:Login
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:20:15] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:20:15] "[36mGET /static/css/custom.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:20:15] "[36mGET /static/js/new_ajax_helper.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:app:Register
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:21:10] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:21:10] "[36mGET /static/js/new_ajax_helper.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:21:10] "[36mGET /static/css/custom.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:21:22] "[32mPOST /register HTTP/1.1[0m" 302 -
+INFO:app:Login
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:21:22] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:21:23] "[36mGET /static/css/custom.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:21:23] "[36mGET /static/js/new_ajax_helper.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:app:Register
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:22:40] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:22:40] "[36mGET /static/css/custom.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Jul/2026 12:22:40] "[36mGET /static/js/new_ajax_helper.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
+INFO:werkzeug: * Detected change in 'c:\\Users\\BNielsen\\flasktemplate\\Basic-Flask-Template\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 532-969-401
