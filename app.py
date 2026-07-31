@@ -23,7 +23,7 @@ def login():
         password = request.form.get('password') #name of input
         results = DATABASE.ViewQuery('SELECT * FROM users WHERE email = ? and password = ?', (email,password))
         if results:
-            session['email'] = email
+            session['userid'] = results[0]['userid']
             session['permission'] = results[0]['permission']
             flash("Login successful!")
             return redirect('/home')
@@ -61,11 +61,8 @@ def register():
 
 @app.route('/home')
 def home():
-    if 'permission' in session:
-        if session['permission'] == 'admin':
-            return "All glory to the administrator!"
     app.logger.info("Home")
-    return "Home"
+    return render_template('home.html')
 
 @app.route('/admin')
 def admin():
