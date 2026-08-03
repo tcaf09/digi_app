@@ -36,7 +36,7 @@ def login():
 def logout():
     app.logger.info("Logout")
     session.clear()
-    return redirect('/login')
+    return redirect('/')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -62,12 +62,20 @@ def register():
 @app.route('/home')
 def home():
     app.logger.info("Home")
+    if 'userid' not in session:
+        flash("You must be logged in to access this page.")
+        return redirect('/')
     return render_template('home.html')
 
 @app.route('/admin')
 def admin():
     app.logger.info("admin")
-    return "Admin"
+    if 'permission' in session:
+        if session['permission'] == 'admin':
+            results = DATABASE.ViewQuery('SELECT * FROM users')
+            return render_template('admin.html', users=results)
+    flash("You do not have permission to access this page.")
+    return redirect('/home')
 
 #main method called web server application
 if __name__ == '__main__':

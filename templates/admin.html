@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Admin</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Permission</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %} <!-- through each dictionary in the list -->
+                <tr>
+                    <td>{{ user['userid'] }}</td>
+                    <td>{{ user['email'] }}</td>
+                    <td>{{ user['firstname'] }}</td>
+                    <td>{{ user['lastname'] }}</td>
+                    <td>{{ user['permission'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+{% endblock %}
