@@ -2,6 +2,7 @@ from flask import *
 import sys
 import logging
 from interfaces.databaseinterface import Database
+import hashlib
 
 #---CONFIGURE APP---------------------------------------------------
 app = Flask(__name__)
@@ -15,12 +16,26 @@ def backdoor():
     results = DATABASE.ViewQuery('SELECT * FROM users')
     return jsonify(results)
 
+@app.route('/hash') #YOU CAN ONLY DO THIS ONCE.
+def hashexistingpasswords():
+    if 'hashed' in session:
+        flash("Passwords have already been hashed.")
+        return redirect('/')
+    results = DATABASE.ViewQuery('SELECT * FROM users')
+    for user in results:
+        hashed_password = hashlib.sha256(user['password'].encode()).hexdigest()
+        DATABASE.ModifyQuery('UPDATE users SET password = ? WHERE userid = ?', (hashed_password, user['userid']))
+    session['hashed'] = True
+    return jsonify({"message": "Passwords hashed successfully."})
+
 #---VIEW FUNCTIONS----------------------------------------------------
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get('email') #name of the input
         password = request.form.get('password') #name of input
+        # Hash the password before checking it against the database
+        password = hashlib.sha256(password.encode()).hexdigest()
         results = DATABASE.ViewQuery('SELECT * FROM users WHERE email = ? and password = ?', (email,password))
         if results:
             session['userid'] = results[0]['userid']
