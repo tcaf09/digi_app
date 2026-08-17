@@ -64,6 +64,7 @@ def register():
         if password != confirm_password:
             flash("Passwords do not match. Please try again.")
         else:
+            password = hashlib.sha256(password.encode()).hexdigest()
             results = DATABASE.ViewQuery('SELECT * FROM users WHERE email = ?', (email,))
             if not results:
                 DATABASE.ModifyQuery('INSERT INTO users (email, password, firstname, lastname) VALUES (?, ?, ?, ?)', (email, password, firstname, lastname))
@@ -81,6 +82,22 @@ def home():
         flash("You must be logged in to access this page.")
         return redirect('/')
     return render_template('home.html')
+
+@app.route('/admin/delete/<int:userid>', methods=['POST'])
+def delete_user(userid):
+    if 'permission' not in session or session['permission'] != 'admin':
+        flash("You do not have permission to access this page.")
+        return redirect('/home')
+
+    if userid == session['userid']:
+        flash("You cannot delete your own account.")
+        return redirect('/admin')
+
+    if DATABASE.ModifyQuery('DELETE FROM users WHERE userid = ?', (userid,)):
+        flash("User deleted successfully.")
+    else:
+        flash("Unable to delete user.")
+    return redirect('/admin')
 
 @app.route('/admin')
 def admin():
