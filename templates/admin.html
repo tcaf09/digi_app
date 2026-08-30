@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Admin</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Permission</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %} <!-- through each dictionary in the list -->
+                <tr>
+                    <td>{{ user['userid'] }}</td>
+                    <td>{{ user['email'] }}</td>
+                    <td>{{ user['firstname'] }}</td>
+                    <td>{{ user['lastname'] }}</td>
+                    <td>{{ user['permission'] }}</td>
+                    <td>
+                        {% if user['userid'] != session['userid'] %}
+                            <form action="{{ url_for('delete_user', userid=user['userid']) }}" method="POST" onsubmit="return confirm('Delete this user?');">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        {% else %}
+                            <span class="text-muted">Current admin</span>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+{% endblock %}

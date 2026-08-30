@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Home</h1>
+    {% if 'permission' in session %}
+        {% if session['permission'] == 'admin' %}
+            <p>All glory to the administrator!</p>
+        {% else %}
+            <p>Welcome, {{session['userid']}}!</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}
